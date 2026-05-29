@@ -7,6 +7,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- =============================================
+         Google AdSense 广告代码
+         申请地址: https://www.google.com/adsense
+         申请通过后，将下面的 ca-pub-XXXXXXXXXXXXXXXX 替换为你的真实 Publisher ID
+         ============================================= -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <!-- =============================================
+         百度联盟广告（国内备选）
+         申请地址: https://union.baidu.com
+         申请通过后将下方注释取消，并替换 cproid 为你的真实ID
+         ============================================= -->
+    <!-- <script type="text/javascript">
+         var cpro_id = "uXXXXXXXX";
+    </script>
+    <script src="https://cpro.baidustatic.com/cpro/ui/cm.js" defer></script> -->
     <style>
         * {
             margin: 0;
@@ -627,6 +644,54 @@
             }
         }
 
+        /* ===== 广告位样式 ===== */
+        .ad-banner {
+            width: 100%;
+            background: #fff;
+            border: 1px dashed #dde2f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #aaa;
+            font-size: 13px;
+            overflow: hidden;
+            margin: 10px 0 25px;
+        }
+
+        .ad-banner-top {
+            height: 90px;  /* 728x90 Leaderboard */
+        }
+
+        .ad-banner-mid {
+            height: 90px;
+            margin: 0 0 30px;
+        }
+
+        .ad-banner ins {
+            display: block;
+            width: 100%;
+        }
+
+        .ad-placeholder {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .ad-placeholder small {
+            display: block;
+            color: #ccc;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .ad-banner-top {
+                height: 60px; /* 320x50 Mobile Banner */
+            }
+        }
+
         /* Loading Animation */
         .loading {
             display: flex;
@@ -683,6 +748,26 @@
 
     <!-- Main Content -->
     <main class="main">
+
+        <!-- ===== 顶部横幅广告 (728x90 Leaderboard) ===== -->
+        <div class="ad-banner ad-banner-top" id="adTop">
+            <!-- Google AdSense 广告（申请通过后取消注释，删除占位符div） -->
+            <!--
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+            <!-- 占位符（申请广告后删除此div） -->
+            <div class="ad-placeholder">
+                <span>广告位 — 728×90</span>
+                <small>申请 Google AdSense 后此处将显示真实广告</small>
+            </div>
+        </div>
+
         <!-- New Games -->
         <section class="game-section">
             <div class="section-header">
@@ -716,6 +801,24 @@
             </div>
         </section>
 
+        <!-- ===== 中间插入广告 (320x50 / 728x90) ===== -->
+        <div class="ad-banner ad-banner-mid" id="adMid">
+            <!-- Google AdSense 广告（申请通过后取消注释） -->
+            <!--
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
+            <div class="ad-placeholder">
+                <span>广告位 — 728×90 （中间）</span>
+                <small>申请 Google AdSense 后此处将显示真实广告</small>
+            </div>
+        </div>
+
         <!-- Popular Games -->
         <section class="game-section">
             <div class="section-header">
@@ -747,6 +850,25 @@
                 <!-- Populated by JS -->
             </div>
         </section>
+
+        <!-- ===== 底部广告 (300x250 Rectangle) ===== -->
+        <div style="display:flex;justify-content:center;margin:10px 0 30px;">
+            <div id="adBottom" style="width:300px;height:250px;background:#fff;border:1px dashed #dde2f0;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#aaa;overflow:hidden;">
+                <!-- Google AdSense 300x250（申请通过后取消注释） -->
+                <!--
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="1122334455"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                -->
+                <div class="ad-placeholder">
+                    <span>广告位 — 300×250</span>
+                    <small>申请通过后显示真实广告</small>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -769,9 +891,9 @@
                 <div>
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
@@ -1074,5 +1196,7 @@
             document.body.style.overflow = '';
         }
     </script>
+    <!-- Ad Script (nap5k.com zone 11071850) -->
+    <script>(function(s){s.dataset.zone='11071850',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </body>
 </html>
